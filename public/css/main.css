@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+img {
+  border: 0; }
+
+.preload * {
+  -webkit-transition: none !important; }
+
+body {
+  background: #999999; }
+
+#container {
+  padding: 22px 0 0 0; }
+
+.content {
+  position: relative;
+  overflow: hidden;
+  height: 96.3%;
+  background: white; }
+
+.page {
+  position: absolute;
+  height: 96.3%;
+  -webkit-transform: translate3d(100%, 0, 0);
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  background: white; }
+  .page img {
+    width: 100%; }
+
+.page.main {
+  -webkit-transform: translate3d(0, 0, 0); }
+
+.page.prev {
+  -webkit-transform: translate3d(-100%, 0, 0); }
