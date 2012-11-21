@@ -6,7 +6,7 @@
 img
   border: 0
 
-$height: 96.3%
+$height_ios: 96.3%
 
 .preload *
   -webkit-transition: none !important
@@ -14,18 +14,23 @@ $height: 96.3%
 body
   background: #999
 
-#container
-  padding: 22px 0 0 0
+.ios
+  #container
+    padding: 22px 0 0 0
+  .content
+    height: $height_ios
+  .page
+    height: $height_ios
 
 .content
   position: relative
   overflow: hidden
-  height: $height
   background: #fff
+  height: 100%
 
 .page
   position: absolute
-  height: $height
+  height: 100%
   //left: 100%
   -webkit-transform: translate3d(100%, 0, 0)
   width: 100%

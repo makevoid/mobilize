@@ -16,6 +16,7 @@ $ ->
   if ios
     $("img").on
       touchend: contentClicked
+    $("body").addClass "ios"
   else
     $("img").on
       click: contentClicked
