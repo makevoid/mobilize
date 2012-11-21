@@ -1,28 +1,36 @@
 (function() {
 
   $(function() {
-    var contentClicked, ios;
+    var bind_buttons, buttons, contentClicked, ios, unbind_buttons;
     contentClicked = function() {
       $(".page.prev").addClass("temp").removeClass("prev");
       $(".page.main").addClass("prev").removeClass("main");
       $(".page.next").addClass("main").removeClass("next");
-      return $(".page.temp").addClass("next").removeClass("temp");
+      $(".page.temp").addClass("next").removeClass("temp");
+      return unbind_buttons();
+    };
+    buttons = $("img, .button");
+    unbind_buttons = function() {
+      return buttons.off();
+    };
+    bind_buttons = function() {
+      if (ios) {
+        buttons.on({
+          touchend: contentClicked
+        });
+        return $("body").addClass("ios");
+      } else {
+        return buttons.on({
+          click: contentClicked
+        });
+      }
     };
     ios = navigator.userAgent.match(/(iPad|iPhone|iPod)/i);
     $("body").removeClass("preload");
     $("body").on("touchmove", function(evt) {
       return evt.preventDeafult();
     });
-    if (ios) {
-      $("img").on({
-        touchend: contentClicked
-      });
-      $("body").addClass("ios");
-    } else {
-      $("img").on({
-        click: contentClicked
-      });
-    }
+    bind_buttons();
     return $(".page").on("webkitTransitionEnd", function() {
       $(".page.prev").css({
         zIndex: 0
@@ -30,9 +38,10 @@
       $(".page.main").css({
         zIndex: 1
       });
-      return $(".page.next").css({
+      $(".page.next").css({
         zIndex: 1
       });
+      return bind_buttons();
     });
   });
 

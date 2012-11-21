@@ -6,11 +6,21 @@
 img {
   border: 0; }
 
+a {
+  text-decoration: none; }
+
+a {
+  color: #222222; }
+
+a:hover {
+  color: #555555; }
+
 .preload * {
   -webkit-transition: none !important; }
 
 body {
-  background: #999999; }
+  background: #999999;
+  font-family: Arial; }
 
 .ios #container {
   padding: 22px 0 0 0; }
@@ -34,6 +44,34 @@ body {
   background: white; }
   .page img {
     width: 100%; }
+
+h1 {
+  height: 44px;
+  padding: 8px 0 0;
+  background: -webkit-linear-gradient(#555555, #222222, #222222);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  position: relative; }
+  h1 a {
+    color: white; }
+  h1 a:hover {
+    color: #cccccc; }
+
+.button {
+  position: absolute;
+  right: 0;
+  margin: 0 12px 0 0;
+  font-size: 14px;
+  background: -webkit-linear-gradient(#999999, #444444, #444444);
+  padding: 5px 12px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: normal; }
+  .button:hover {
+    background: -webkit-linear-gradient(#999999, #333333, #333333); }
+  .button:active {
+    background: -webkit-linear-gradient(#888888, #222222, #222222); }
 
 .page.main {
   -webkit-transform: translate3d(0, 0, 0); }

@@ -1,3 +1,5 @@
+// reset
+
 *
   margin: 0
   padding: 0
@@ -6,13 +8,27 @@
 img
   border: 0
 
+a
+  text-decoration: none
+
+// vars
+
 $height_ios: 96.3%
+
+
+// style
+
+a
+  color: #222
+a:hover
+  color: #555
 
 .preload *
   -webkit-transition: none !important
 
 body
   background: #999
+  font-family: Arial
 
 .ios
   #container
@@ -39,6 +55,33 @@ body
   img
     width: 100%
 
+h1
+  height: 44px
+  padding: 8px 0 0
+  background: -webkit-linear-gradient(#555, #222, #222)
+  color: #fff
+  font-size: 20px
+  text-align: center
+  position: relative
+  a
+    color: #fff
+  a:hover
+    color: #ccc
+
+.button
+  position: absolute
+  right: 0
+  margin: 0 12px 0 0
+  font-size: 14px
+  background: -webkit-linear-gradient(#999, #444, #444)
+  padding: 5px 12px
+  border: 1px solid #000
+  border-radius: 5px
+  font-weight: normal
+  &:hover
+    background: -webkit-linear-gradient(#999, #333, #333)
+  &:active
+    background: -webkit-linear-gradient(#888, #222, #222)
 
 .page.next
 
